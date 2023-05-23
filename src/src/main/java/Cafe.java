@@ -2,11 +2,14 @@ public class Cafe {
 	private float gramosCafe;
 
 	private int mililitrosAgua;
-	private String tamaño;
+	public enum Tamaño{Pequeño, Mediano, Grande}
+
+	private Tamaño tamaño;
+
 	private String nombre;
 	private int precio;
 
-	public Cafe( String nombre,float gramosCafe, int mililitrosAgua, String tamaño) {
+	public Cafe( String nombre,float gramosCafe, int mililitrosAgua, Tamaño tamaño) {
 		this.gramosCafe= gramosCafe;
 		this.mililitrosAgua= mililitrosAgua;
 		this.tamaño=tamaño;
@@ -14,7 +17,7 @@ public class Cafe {
 
 	}
 
-	public String getTamaño() {
+	public Tamaño getTamaño() {
 		return tamaño;
 	}
 
@@ -34,7 +37,7 @@ public class Cafe {
 		this.gramosCafe = gramosCafe;
 	}
 
-	public void setTamaño(String tamaño) {
+	public void setTamaño(Tamaño tamaño) {
 		this.tamaño = tamaño;
 	}
 

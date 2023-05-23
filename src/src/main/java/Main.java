@@ -1,14 +1,16 @@
 public class Main {
     public static void main(String[] args) {
         Cafeteria cafeteriaPrueba = agregarCafeteria("cafeggedon","montt 231", "@cafeggedon");
-        cafeteriaPrueba.agregarCafe("moccha",20,150,"mediano");
-        cafeteriaPrueba.agregarCafe("latte",15,100,"pequeño");
-        cafeteriaPrueba.agregarCafe("latte",20,200,"grande");
-        cafeteriaPrueba.buscarCafe("mediano");
-        cafeteriaPrueba.buscarCafe("chico");
+        cafeteriaPrueba.agregarCafe("moccha",20,150, Cafe.Tamaño.Mediano);
+        cafeteriaPrueba.agregarCafe("latte",15,100, Cafe.Tamaño.Pequeño);
+        cafeteriaPrueba.agregarCafe("latte",20,200, Cafe.Tamaño.Grande);
+        cafeteriaPrueba.buscarCafe(Cafe.Tamaño.Pequeño);
+        cafeteriaPrueba.buscarCafe(Cafe.Tamaño.Pequeño);
         mostrarCafes(cafeteriaPrueba);
         cafeteriaPrueba.removerCafe(1);
         mostrarCafes(cafeteriaPrueba);
+        cafeteriaPrueba.buscarCafe(Cafe.Tamaño.Grande);
+
     }
 
     private static void mostrarCafes(Cafeteria cafeteria) {

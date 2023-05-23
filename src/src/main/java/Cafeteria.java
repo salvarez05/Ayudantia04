@@ -47,14 +47,15 @@ public class Cafeteria {
 		return cafesALaVenta;
 	}
 
-	public void agregarCafe(String nombre, float gramosCafe, int mililitrosAgua, String tamano){
+
+	public void agregarCafe(String nombre, float gramosCafe, int mililitrosAgua, Cafe.Tamaño tamano){
 		Cafe cafe = new Cafe(nombre, gramosCafe, mililitrosAgua, tamano);
 		this.cafesALaVenta.add(cafe);
 	}
 	public void removerCafe(int numero){
 		getCafesALaVenta().remove(numero);
 	}
-	public void buscarCafe (String tamaño){
+	public void buscarCafe (Cafe.Tamaño tamaño){
 		int numero=0;
 		for (int i = 0; i < getCafesALaVenta().size(); i++) {
 			numero++;
