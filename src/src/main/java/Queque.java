@@ -1,7 +1,8 @@
 public class Queque {
 
 	private String tipo;
-	private String tamaño;
+	public enum Tamaño{Pequeño, Mediano, Grande}
+	private Queque.Tamaño tamaño;
 
 	private int precio;
 	private String sabor;
@@ -13,12 +14,12 @@ public class Queque {
 		this.tipo= Tipo;
 	}
 
-	public String getTamaño() {
+	public Tamaño getTamaño() {
 		return tamaño;
 	}
 
-	public void setTamaño(String Tamaño) {
-		this.tamaño=Tamaño;
+	public void setTamaño(Tamaño tamaño) {
+		this.tamaño=tamaño;
 	}
 
 	public int getPrecio() {
@@ -36,7 +37,7 @@ public class Queque {
 	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
-	public Queque(String tipo, String tamaño, String sabor, int precio ){
+	public Queque(String tipo, Tamaño tamaño, String sabor, int precio ){
 		this.tipo=tipo;
 		this.tamaño=tamaño;
 		this.sabor=sabor;

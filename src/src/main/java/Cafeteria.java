@@ -8,6 +8,7 @@ public class Cafeteria {
 	private ArrayList<Te> tesALaVenta= new ArrayList<>();
 	private ArrayList<Queque> QuequesALaVenta= new ArrayList<>();
 	private ArrayList<Trabajador> trabajadores= new ArrayList<>();
+	private ArrayList<Cliente> clientes= new ArrayList<>();
 	private String nombre;
 	private String direccion;
 	private String redesSociales;
@@ -55,6 +56,14 @@ public class Cafeteria {
 	}
 	public List<Trabajador> getTrabajadores(){return trabajadores;}
 
+	public ArrayList<Cliente> getClientes() {
+		return clientes;
+	}
+
+	public void setClientes(ArrayList<Cliente> clientes) {
+		this.clientes = clientes;
+	}
+
 	public ArrayList<Te> getTesALaVenta() {
 		return tesALaVenta;
 	}
@@ -83,9 +92,13 @@ public class Cafeteria {
 		Te te = new Te(tipoTe, militroAgua, concentracion, tamaño, precio);
 		this.tesALaVenta.add(te);
 	}
-	public void agregarQueque(String tipo, String tamaño, String sabor, int precio ){
+	public void agregarQueque(String tipo, Queque.Tamaño tamaño, String sabor, int precio ){
 		Queque queque= new Queque(tipo, tamaño, sabor, precio);
 		this.QuequesALaVenta.add(queque);
+	}
+	public void agregarCliente(String nombre){
+		Cliente cliente = new Cliente(nombre);
+		this.clientes.add(cliente);
 	}
 
 
@@ -100,6 +113,7 @@ public class Cafeteria {
 		getQuequesALaVenta().remove(numero);
 	}
 	public void despedirTrabajador(int numero){getTrabajadores().remove(numero);}
+	public void borrarCliente(int numero){getClientes().remove(numero);}
 	public void buscarCafe (Cafe.Tamaño tamaño){
 		int numero=0;
 		boolean existencia= false;

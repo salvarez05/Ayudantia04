@@ -23,7 +23,7 @@ public class Cliente {
 	public Cliente(String nombre){
 		this.nombre=nombre;
 		Random rnum = new Random();
-		this.dinero=rnum.nextInt(1000,6000);
+		this.dinero=rnum.nextInt(2000,6000);
 	}
 
 	public boolean dineroSuficienteCafe(Cafe cafe){
