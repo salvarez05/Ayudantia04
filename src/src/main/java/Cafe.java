@@ -59,7 +59,7 @@ public class Cafe {
 	}
 
 	public String toString(){
-		return "Cafe "+getNombre()+" de tamaño "+ getTamaño()+ " con "+getGramosCafe()+" gramos de cafe y "+getMililitrosAgua()+" mm de agua, precio:" +getPrecio();
+		return "Cafe "+getNombre()+" de tamaño "+ getTamaño()+ ", con "+getGramosCafe()+" gramos de cafe y "+getMililitrosAgua()+" mm de agua de precio:" +getPrecio();
 	}
 
 }

@@ -1,7 +1,7 @@
 public class Trabajador {
 
 
-	public enum Tipo{Barista, Mesero, Cocinero,}
+	public enum Tipo{Barista, Mesero, Cocinero, Delivery}
 
 	private Tipo tipo;
 	private String nombre;

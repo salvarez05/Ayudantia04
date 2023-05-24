@@ -2,26 +2,84 @@ import java.util.Random;
 public class Cliente {
 
 
-	Cafeteria Tienda;
-	private String Nombre;
-	private int Dinero;
+	private String nombre;
+	private int dinero;
 
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
 
 	public void setNombre(String Nombre) {
-		this.Nombre= Nombre;
+		this.nombre= Nombre;
 	}
 
 	public int getDinero() {
-		return Dinero;
+		return dinero;
 	}
 
 	public void setDinero(int Dinero) {
-		this.Dinero = Dinero;
+		this.dinero = Dinero;
+	}
+	public Cliente(String nombre){
+		this.nombre=nombre;
+		Random rnum = new Random();
+		this.dinero=rnum.nextInt(1000,6000);
+	}
+
+	public boolean dineroSuficienteCafe(Cafe cafe){
+		if(getDinero()>=cafe.getPrecio()){
+			System.out.println("El cliente tiene dinero suficiente");
+			return true;
+		}else {
+			System.out.println("El cliente no tiene dinero suficiente");
+			return false;
+		}
+	}
+	public boolean dineroSuficienteTe(Te te){
+		if(getDinero()>=te.getPrecio()){
+			System.out.println("El cliente tiene dinero suficiente");
+			return true;
+		}else {
+			System.out.println("El cliente no tiene dinero suficiente");
+			return false;
+		}
+	}
+	public boolean dineroSuficienteQueque(Queque queque){
+		if(getDinero()>=queque.getPrecio()){
+			System.out.println("El cliente tiene dinero suficiente");
+			return true;
+		}else {
+			System.out.println("El cliente no tiene dinero suficiente");
+			return false;
+		}
+	}
+	public void comprarCafe(Cafe cafe){
+		int dinero=getDinero();
+		if(dineroSuficienteCafe(cafe)==true){
+			dinero=dinero-cafe.getPrecio();
+			setDinero(dinero);
+			System.out.println("El cliente compró: "+cafe.toString());
+		}
+	}
+	public void comprarTe(Te te){
+		int dinero=getDinero();
+		if(dineroSuficienteTe(te)==true){
+			dinero=dinero-te.getPrecio();
+			setDinero(dinero);
+			System.out.println("El cliente compró: "+te.toString());
+		}
+	}
+	public void comprarQueque(Queque queque){
+		int dinero=getDinero();
+		if(dineroSuficienteQueque(queque)==true){
+			dinero=dinero-queque.getPrecio();
+			setDinero(dinero);
+			System.out.println("El cliente compró: "+queque.toString());
+		}
 	}
 
 
-
+	public String toString() {
+		return "Cliente "+getNombre()+" tiene un saldo de : "+getDinero();
+	}
 }

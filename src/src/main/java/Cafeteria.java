@@ -5,6 +5,8 @@ import java.util.List;
 
 public class Cafeteria {
 	private ArrayList<Cafe> cafesALaVenta= new ArrayList<>();
+	private ArrayList<Te> tesALaVenta= new ArrayList<>();
+	private ArrayList<Queque> QuequesALaVenta= new ArrayList<>();
 	private ArrayList<Trabajador> trabajadores= new ArrayList<>();
 	private String nombre;
 	private String direccion;
@@ -53,6 +55,21 @@ public class Cafeteria {
 	}
 	public List<Trabajador> getTrabajadores(){return trabajadores;}
 
+	public ArrayList<Te> getTesALaVenta() {
+		return tesALaVenta;
+	}
+
+	public void setTesALaVenta(ArrayList<Te> tesALaVenta) {
+		this.tesALaVenta = tesALaVenta;
+	}
+
+	public ArrayList<Queque> getQuequesALaVenta() {
+		return QuequesALaVenta;
+	}
+
+	public void setQuequesALaVenta(ArrayList<Queque> quequesALaVenta) {
+		QuequesALaVenta = quequesALaVenta;
+	}
 
 	public void agregarCafe(String nombre, float gramosCafe, int mililitrosAgua, Cafe.Tamaño tamano, int precio){
 		Cafe cafe = new Cafe(nombre, gramosCafe, mililitrosAgua, tamano, precio);
@@ -62,24 +79,39 @@ public class Cafeteria {
 		Trabajador trabajador = new Trabajador(nombre,tipo,sueldo);
 		this.trabajadores.add(trabajador);
 	}
+	public void agregarTe(String tipoTe, int militroAgua, String concentracion, Te.Tamaño tamaño, int precio){
+		Te te = new Te(tipoTe, militroAgua, concentracion, tamaño, precio);
+		this.tesALaVenta.add(te);
+	}
+	public void agregarQueque(String tipo, String tamaño, String sabor, int precio ){
+		Queque queque= new Queque(tipo, tamaño, sabor, precio);
+		this.QuequesALaVenta.add(queque);
+	}
 
 
 
 	public void removerCafe(int numero){
 		getCafesALaVenta().remove(numero);
 	}
+	public void removerTe(int numero){
+		getTesALaVenta().remove(numero);
+	}
+	public void removerQueque(int numero){
+		getQuequesALaVenta().remove(numero);
+	}
+	public void despedirTrabajador(int numero){getTrabajadores().remove(numero);}
 	public void buscarCafe (Cafe.Tamaño tamaño){
 		int numero=0;
 		boolean existencia= false;
 		for (int i = 0; i < getCafesALaVenta().size(); i++) {
 			numero++;
 			if(getCafesALaVenta().get(i).getTamaño().equals(tamaño)){
-				System.out.println("Hay un cafe de tamaño "+tamaño+" en la posicion numero "+numero+" del menu");
+				System.out.println("Hay un cafe "+tamaño+" en la posicion numero "+numero+" del menu");
 				existencia=true;
 			}
 		}
 		if (existencia==false){
-			System.out.println("No hay cafes de tamaño "+tamaño);
+			System.out.println("No hay cafes "+tamaño+"s");
 		}
 	}
 	public void mostrarCafes() {
@@ -92,6 +124,12 @@ public class Cafeteria {
 		System.out.println("La cafeteria "+getNombre()+" tiene los siguientes empleados:");
 		for (int i = 0; i < getTrabajadores().size(); i++) {
 			System.out.println(getTrabajadores().get(i).toString());
+		}
+	}
+	public void mostrarTes() {
+		System.out.println("La cafeteria "+getNombre()+" tiene a la venta los siguientes Tes:");
+		for (int i = 0; i < getTesALaVenta().size(); i++) {
+			System.out.println(getTesALaVenta().get(i).toString());
 		}
 	}
 

@@ -58,7 +58,7 @@ public class Te {
 
 
 	public String toString() {
-		return "Te "+getTipoTe()+", con concentracion"+getConcentracion()+", con "+getMililitroAgua()+"ml de agua, tamaño "+getTamaño()+" y de precio"+getPrecio();
+		return "Te "+getTipoTe()+", con concentracion "+getConcentracion()+", "+getMililitroAgua()+"ml de agua y tamaño "+getTamaño()+" de precio: "+getPrecio();
 	}
 
 }
