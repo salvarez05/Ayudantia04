@@ -1,10 +1,13 @@
+import java.security.PublicKey;
+
 public class Te {
 
+	public enum Tamaño{Pequeño, Mediano, Grande}
 	private String tipoTe;
 	private int mililitroAgua;
 	private String concentracion;
-	private String tamaño;
-	private String temperatura;
+	private Tamaño tamaño;
+	private  int precio;
 
 	public String getTipoTe() {
 		return this.tipoTe;
@@ -30,32 +33,32 @@ public class Te {
 		this.concentracion= Concentracion;
 	}
 
-
-	public Te(String tipoTe, int militroAgua, String concentracion) {
-		this.tipoTe=tipoTe;
-		this.mililitroAgua=militroAgua;
-		this.concentracion=concentracion;
+	public void setPrecio(int precio) {
+		this.precio = precio;
 	}
 
-	public String getTamaño() {
+	public int getPrecio() {
+		return precio;
+	}
+
+	public void setTamaño(Tamaño tamaño) {
+		this.tamaño = tamaño;
+	}
+	public Tamaño getTamaño() {
 		return tamaño;
 	}
 
-	public void setTamaño(String Tamaño) {
-		this.tamaño = tamaño;
+	public Te(String tipoTe, int militroAgua, String concentracion, Tamaño tamaño, int precio) {
+		this.tipoTe=tipoTe;
+		this.mililitroAgua=militroAgua;
+		this.concentracion=concentracion;
+		this.tamaño= tamaño;
+		this.precio=precio;
 	}
 
-	public String getTemperatura() {
-		return  temperatura;
-	}
-
-
-	public void setTemperatura(String Temperatura) {
-		this.temperatura= Temperatura;
-	}
 
 	public String toString() {
-		return "";
+		return "Te "+getTipoTe()+", con concentracion"+getConcentracion()+", con "+getMililitroAgua()+"ml de agua, tamaño "+getTamaño()+" y de precio"+getPrecio();
 	}
 
 }

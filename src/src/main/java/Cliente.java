@@ -22,8 +22,6 @@ public class Cliente {
 		this.Dinero = Dinero;
 	}
 
-	public Boolean dineroSuficiente() {
-		return true;
-	}
+
 
 }

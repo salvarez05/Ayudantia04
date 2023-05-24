@@ -9,11 +9,12 @@ public class Cafe {
 	private String nombre;
 	private int precio;
 
-	public Cafe( String nombre,float gramosCafe, int mililitrosAgua, Tamaño tamaño) {
+	public Cafe( String nombre,float gramosCafe, int mililitrosAgua, Tamaño tamaño, int precio) {
 		this.gramosCafe= gramosCafe;
 		this.mililitrosAgua= mililitrosAgua;
 		this.tamaño=tamaño;
 		this.nombre= nombre;
+		this.precio=precio;
 
 	}
 
@@ -41,6 +42,14 @@ public class Cafe {
 		this.tamaño = tamaño;
 	}
 
+	public int getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(int precio) {
+		this.precio = precio;
+	}
+
 	public void setMililitrosAgua(int mililitrosAgua) {
 		this.mililitrosAgua = mililitrosAgua;
 	}
@@ -50,7 +59,7 @@ public class Cafe {
 	}
 
 	public String toString(){
-		return "Cafe "+getNombre()+" de tamaño "+ getTamaño()+ " con "+getGramosCafe()+" gramos de cafe y "+getMililitrosAgua()+" mm de agua";
+		return "Cafe "+getNombre()+" de tamaño "+ getTamaño()+ " con "+getGramosCafe()+" gramos de cafe y "+getMililitrosAgua()+" mm de agua, precio:" +getPrecio();
 	}
 
 }
